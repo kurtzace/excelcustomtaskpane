@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenizedTag", "TokenizedTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewExamples", "WpfTreeViewExamples\WpfTreeViewExamples.csproj", "{48873CC1-9BEC-46FF-BF4F-2B173226F8AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeView", "WpfTreeView\WpfTreeView\WpfTreeView.csproj", "{D0F87E7F-3CA2-469E-8559-40D0056512F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,14 @@ Global
 		{48873CC1-9BEC-46FF-BF4F-2B173226F8AC}.Release|Any CPU.ActiveCfg = Release|x86
 		{48873CC1-9BEC-46FF-BF4F-2B173226F8AC}.Release|x86.ActiveCfg = Release|x86
 		{48873CC1-9BEC-46FF-BF4F-2B173226F8AC}.Release|x86.Build.0 = Release|x86
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Debug|x86.Build.0 = Debug|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
