@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewExamples", "WpfT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeView", "WpfTreeView\WpfTreeView\WpfTreeView.csproj", "{D0F87E7F-3CA2-469E-8559-40D0056512F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQLClient", "GraphQLClient\GraphQLClient.csproj", "{23A53327-CD30-48B5-9B2D-FCF588C69942}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,14 @@ Global
 		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|x86.ActiveCfg = Release|Any CPU
 		{D0F87E7F-3CA2-469E-8559-40D0056512F6}.Release|x86.Build.0 = Release|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Debug|x86.Build.0 = Debug|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Release|x86.ActiveCfg = Release|Any CPU
+		{23A53327-CD30-48B5-9B2D-FCF588C69942}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
