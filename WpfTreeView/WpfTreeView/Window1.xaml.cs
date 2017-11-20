@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GraphQLClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace WpfTreeView
         public Window1()
         {
             InitializeComponent();
+            var schema = new Introspect().doIntrospectAsync().Result;
         }
 
         private void TreeView_MouseDown(object sender, MouseButtonEventArgs e)

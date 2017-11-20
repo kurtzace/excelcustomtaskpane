@@ -6,10 +6,10 @@ namespace GraphQLClient
 {
     public class Introspect
     {
-        public GraphQLSchemaOutput doIntrospect()
+        public async System.Threading.Tasks.Task<Schema> doIntrospectAsync()
         {
             var client = new GraphQL.GraphQLClient("https://www.graphqlhub.com/graphql");
-            var query = @"
+            var query = @"{
         __schema {
       queryType { name }
       mutationType { name }
@@ -76,7 +76,7 @@ namespace GraphQLClient
     }
   }
 ";
-            var obj = client.Query(query, new { id = "123" }).Get<GraphQLSchemaOutput>("someObject");
+            var obj = (await client.QueryAsync(query, null)).Get<Schema>("__schema");
             return obj;
         }
     }

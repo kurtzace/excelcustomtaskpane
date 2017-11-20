@@ -5,9 +5,9 @@
     using System.IO;
     using System.Net;
     using System.Text;
+using System.Net.Http;
 
-
-    namespace GraphQL
+namespace GraphQL
     {
         public class GraphQLClient
         {
@@ -78,56 +78,40 @@
             {
                 this.url = url;
             }
-            public GraphQLQueryResult Query(string query, object variables)
+        public async System.Threading.Tasks.Task<GraphQLQueryResult> QueryAsync(string query, object variables)
+        {
+            //return new GraphQLQueryResult(null);
+            var fullQuery = new GraphQLQuery()
             {
+                query = query,
+                variables = variables,
+            };
+
+            try
+            {
+
+                string jsonContent = JsonConvert.SerializeObject(fullQuery);
+
+                Console.WriteLine(jsonContent);
+                HttpClient client = new HttpClient();
+                //url = "https://graphql.brandfolder.com/graphql";
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+                var result = client.PostAsync(url, content).Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var json = await result.Content.ReadAsStringAsync();
+                    return new GraphQLQueryResult(json);
+                } else
+                {
+                    var json = await result.Content.ReadAsStringAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return new GraphQLQueryResult(null, e);
+            }
             return new GraphQLQueryResult(null);
-            //    var fullQuery = new GraphQLQuery()
-            //    {
-            //        query = query,
-            //        variables = variables,
-            //    };
-            //    string jsonContent = JsonConvert.SerializeObject(fullQuery);
-
-            //    Console.WriteLine(jsonContent);
-            //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            //    request.Method = "POST";
-
-            //    UTF8Encoding encoding = new UTF8Encoding();
-            //    Byte[] byteArray = encoding.GetBytes(jsonContent.Trim());
-
-            //    request.ContentLength = byteArray.Length;
-            //    request.ContentType = @"application/json";
-
-            //    using (Stream dataStream = request.GetRequestStream())
-            //    {
-            //        dataStream.Write(byteArray, 0, byteArray.Length);
-            //    }
-            //    long length = 0;
-            //    try
-            //    {
-            //        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            //        {
-            //            length = response.ContentLength;
-            //            using (Stream responseStream = response.GetResponseStream())
-            //            {
-            //                StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-            //                var json = reader.ReadToEnd();
-            //                return new GraphQLQueryResult(json);
-            //            }
-            //        }
-            //    }
-            //    catch (WebException ex)
-            //    {
-            //        WebResponse errorResponse = ex.Response;
-            //        using (Stream responseStream = errorResponse.GetResponseStream())
-            //        {
-            //            StreamReader reader = new StreamReader(responseStream, Encoding.GetEncoding("utf-8"));
-            //            String errorText = reader.ReadToEnd();
-            //            Console.WriteLine(errorText);
-            //            return new GraphQLQueryResult(null, ex);
-            //        }
-            //    }
-            //}
         }
     }
 
